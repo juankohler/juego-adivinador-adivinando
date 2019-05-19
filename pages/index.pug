@@ -2,7 +2,7 @@ extends ../templates/main.pug
 
 //- blocks de <head>
 block title
-  | Adivinador | Eventbrite 
+  | Juego Adivinador | Eventbrite 
 block metadescription
   meta(name="description" content="Juega a adivinar un número!")
 block css
@@ -11,8 +11,11 @@ block css
 //- blocks de <body>
 block content
   main
-    section
-      h1 Adivinador | Eventbrite
+    section.game
+      .jk-container
+        h1.title Juego Adivinador | Eventbrite
+      
+
 
   //- script
   script(src="../js/index.js")

@@ -1,0 +1,390 @@
+
+$jk-red: (
+  0: #e51c23,
+  1:  #fdeaeb,
+  2:  #f8c1c3,
+  3:  #f3989b,
+  4:  #ee6e73,
+  5:  #ea454b,
+  6:  #d0181e,
+  7:  #b9151b,
+  8:  #a21318,
+  9:  #8b1014,
+);
+
+$principal: (
+  0: #a89046,
+);
+
+$red: (
+  0: #F44336,
+  1:  #FFEBEE,
+  2:  #FFCDD2,
+  3:  #EF9A9A,
+  4:  #E57373,
+  5:  #EF5350,
+  6:  #E53935,
+  7:  #D32F2F,
+  8:  #C62828,
+  9:  #B71C1C,
+  a:   #FF8A80,
+  b:   #FF5252,
+  c:   #FF1744,
+  d:   #D50000
+);
+
+$pink: (
+  0: #e91e63,
+  1:  #fce4ec,
+  2:  #f8bbd0,
+  3:  #f48fb1,
+  4:  #f06292,
+  5:  #ec407a,
+  6:  #d81b60,
+  7:  #c2185b,
+  8:  #ad1457,
+  9:  #880e4f,
+  a:   #ff80ab,
+  b:   #ff4081,
+  c:   #f50057,
+  d:   #c51162
+);
+
+$purple: (
+  0: #9c27b0,
+  1:  #f3e5f5,
+  2:  #e1bee7,
+  3:  #ce93d8,
+  4:  #ba68c8,
+  5:  #ab47bc,
+  6:  #8e24aa,
+  7:  #7b1fa2,
+  8:  #6a1b9a,
+  9:  #4a148c,
+  a:   #ea80fc,
+  b:   #e040fb,
+  c:   #d500f9,
+  d:   #aa00ff
+);
+
+$deep-purple: (
+  0: #673ab7,
+  1:  #ede7f6,
+  2:  #d1c4e9,
+  3:  #b39ddb,
+  4:  #9575cd,
+  5:  #7e57c2,
+  6:  #5e35b1,
+  7:  #512da8,
+  8:  #4527a0,
+  9:  #311b92,
+  a:   #b388ff,
+  b:   #7c4dff,
+  c:   #651fff,
+  d:   #6200ea
+);
+
+$indigo: (
+  0: #3f51b5,
+  1:  #e8eaf6,
+  2:  #c5cae9,
+  3:  #9fa8da,
+  4:  #7986cb,
+  5:  #5c6bc0,
+  6:  #3949ab,
+  7:  #303f9f,
+  8:  #283593,
+  9:  #1a237e,
+  a:   #8c9eff,
+  b:   #536dfe,
+  c:   #3d5afe,
+  d:   #304ffe
+);
+
+$blue: (
+  0: #2196F3,
+  1:  #E3F2FD,
+  2:  #BBDEFB,
+  3:  #90CAF9,
+  4:  #64B5F6,
+  5:  #42A5F5,
+  6:  #1E88E5,
+  7:  #1976D2,
+  8:  #1565C0,
+  9:  #0D47A1,
+  a:   #82B1FF,
+  b:   #448AFF,
+  c:   #2979FF,
+  d:   #2962FF
+);
+
+$light-blue: (
+  0: #03a9f4,
+  1:  #e1f5fe,
+  2:  #b3e5fc,
+  3:  #81d4fa,
+  4:  #4fc3f7,
+  5:  #29b6f6,
+  6:  #039be5,
+  7:  #0288d1,
+  8:  #0277bd,
+  9:  #01579b,
+  a:   #80d8ff,
+  b:   #40c4ff,
+  c:   #00b0ff,
+  d:   #0091ea
+);
+
+$cyan: (
+  0: #00bcd4,
+  1:  #e0f7fa,
+  2:  #b2ebf2,
+  3:  #80deea,
+  4:  #4dd0e1,
+  5:  #26c6da,
+  6:  #00acc1,
+  7:  #0097a7,
+  8:  #00838f,
+  9:  #006064,
+  a:   #84ffff,
+  b:   #18ffff,
+  c:   #00e5ff,
+  d:   #00b8d4
+);
+
+$teal: (
+  0: #009688,
+  1:  #e0f2f1,
+  2:  #b2dfdb,
+  3:  #80cbc4,
+  4:  #4db6ac,
+  5:  #26a69a,
+  6:  #00897b,
+  7:  #00796b,
+  8:  #00695c,
+  9:  #004d40,
+  a:   #a7ffeb,
+  b:   #64ffda,
+  c:   #1de9b6,
+  d:   #00bfa5
+);
+
+$green: (
+  0: #4CAF50,
+  1:  #E8F5E9,
+  2:  #C8E6C9,
+  3:  #A5D6A7,
+  4:  #81C784,
+  5:  #66BB6A,
+  6:  #43A047,
+  7:  #388E3C,
+  8:  #2E7D32,
+  9:  #1B5E20,
+  a:   #B9F6CA,
+  b:   #69F0AE,
+  c:   #00E676,
+  d:   #00C853
+);
+
+$light-green: (
+  0: #8bc34a,
+  1:  #f1f8e9,
+  2:  #dcedc8,
+  3:  #c5e1a5,
+  4:  #aed581,
+  5:  #9ccc65,
+  6:  #7cb342,
+  7:  #689f38,
+  8:  #558b2f,
+  9:  #33691e,
+  a:   #ccff90,
+  b:   #b2ff59,
+  c:   #76ff03,
+  d:   #64dd17
+);
+
+$lime: (
+  0: #cddc39,
+  1:  #f9fbe7,
+  2:  #f0f4c3,
+  3:  #e6ee9c,
+  4:  #dce775,
+  5:  #d4e157,
+  6:  #c0ca33,
+  7:  #afb42b,
+  8:  #9e9d24,
+  9:  #827717,
+  a:   #f4ff81,
+  b:   #eeff41,
+  c:   #c6ff00,
+  d:   #aeea00
+);
+
+$yellow: (
+  0: #ffeb3b,
+  1:  #fffde7,
+  2:  #fff9c4,
+  3:  #fff59d,
+  4:  #fff176,
+  5:  #ffee58,
+  6:  #fdd835,
+  7:  #fbc02d,
+  8:  #f9a825,
+  9:  #f57f17,
+  a:   #ffff8d,
+  b:   #ffff00,
+  c:   #ffea00,
+  d:   #ffd600
+);
+
+$amber: (
+  0: #ffc107,
+  1:  #fff8e1,
+  2:  #ffecb3,
+  3:  #ffe082,
+  4:  #ffd54f,
+  5:  #ffca28,
+  6:  #ffb300,
+  7:  #ffa000,
+  8:  #ff8f00,
+  9:  #ff6f00,
+  a:   #ffe57f,
+  b:   #ffd740,
+  c:   #ffc400,
+  d:   #ffab00
+);
+
+$orange: (
+  0: #ff9800,
+  1:  #fff3e0,
+  2:  #ffe0b2,
+  3:  #ffcc80,
+  4:  #ffb74d,
+  5:  #ffa726,
+  6:  #fb8c00,
+  7:  #f57c00,
+  8:  #ef6c00,
+  9:  #e65100,
+  a:   #ffd180,
+  b:   #ffab40,
+  c:   #ff9100,
+  d:   #ff6d00
+);
+
+$deep-orange: (
+  0: #ff5722,
+  1:  #fbe9e7,
+  2:  #ffccbc,
+  3:  #ffab91,
+  4:  #ff8a65,
+  5:  #ff7043,
+  6:  #f4511e,
+  7:  #e64a19,
+  8:  #d84315,
+  9:  #bf360c,
+  a:   #ff9e80,
+  b:   #ff6e40,
+  c:   #ff3d00,
+  d:   #dd2c00
+);
+
+$brown: (
+  0: #795548,
+  1:  #efebe9,
+  2:  #d7ccc8,
+  3:  #bcaaa4,
+  4:  #a1887f,
+  5:  #8d6e63,
+  6:  #6d4c41,
+  7:  #5d4037,
+  8:  #4e342e,
+  9:  #3e2723
+);
+
+$blue-grey: (
+  0: #607d8b,
+  1:  #eceff1,
+  2:  #cfd8dc,
+  3:  #b0bec5,
+  4:  #90a4ae,
+  5:  #78909c,
+  6:  #546e7a,
+  7:  #455a64,
+  8:  #37474f,
+  9:  #263238
+);
+
+$grey: (
+  0: #9e9e9e,
+  1:  #fafafa,
+  2:  #f5f5f5,
+  3:  #eeeeee,
+  4:  #e0e0e0,
+  5:  #bdbdbd,
+  6:  #757575,
+  7:  #616161,
+  8:  #424242,
+  9:  #212121
+);
+
+$black: (
+  0: #000000
+);
+
+$white: (
+  0: #FFFFFF
+);
+
+$shadow: (
+  0: (0 2px 5px rgba(0,0,0,.26)),
+  1: (0 0 4px rgba(0,0,0,0.14), 0 4px 8px rgba(0,0,0,0.26)),
+  2: (0 0 8px rgba(0,0,0,0.14), 0 6px 8px rgba(0,0,0,0.26)),
+  3: (0 0 10px rgba(0,0,0,0.20)),
+
+  9: (-1px -1px 1px rgba(0,0,0,.26), 1px -1px 1px rgba(0,0,0,.26), -1px 1px 1px rgba(0,0,0,.26), 1px 1px 1px rgba(0,0,0,.26)),
+) !default;
+
+$colorss: (
+  principal: $principal,
+  red2: $jk-red,
+  red: $red,
+  pink: $pink,
+  purple: $purple,
+  deep-purple: $deep-purple,
+  indigo: $indigo,
+  blue: $blue,
+  light-blue: $light-blue,
+  cyan: $cyan,
+  teal: $teal,
+  green: $green,
+  light-green: $light-green,
+  lime: $lime,
+  yellow: $yellow,
+  amber: $amber,
+  orange: $orange,
+  deep-orange: $deep-orange,
+  brown: $brown,
+  blue-grey: $blue-grey,
+  grey: $grey,
+  black: $black,
+  white: $white
+) !default;
+
+
+
+
+// obtener color
+@function getColor($color, $type) {
+  @if map-has-key($colorss, $color) {
+    $curr_color: map-get($colorss, $color);
+    @if map-has-key($curr_color, $type) {
+      @return map-get($curr_color, $type);
+    }
+  }
+  @warn "Unknown `#{name}` in $colors.";
+  @return null;
+}
+// obtener valor de shadow
+@function getShadow($s){
+  @return map-get($shadow,$s);
+}

@@ -1,0 +1,99 @@
+@if $helpers == true {
+  
+  // sacar padding
+    .no-padding{
+      padding: 0;
+    }
+
+// // agregar padding
+//   @for $i from 1 through 3{
+//     .padding-vertical-#{$i}{
+//       padding-left  : $gutter * $i;
+//       padding-right : $gutter * $i; }
+//   }
+
+
+  // //padding horizontal
+  // @for $i from 1 through 3{
+  //   .padding-horizontal-#{$i}{
+  //     padding-bottom : $gutter * $i; 
+  //     padding-top : $gutter * $i; 
+  //   }
+  // }
+  
+// circular
+  // .circle { border-radius : 50%;}
+
+}
+
+// activar o desactivar sticky-footer
+@if $sticky == true{
+  .sticky-footer {
+    @at-root {
+      body {
+        display        : flex;
+        flex-direction : column;
+        min-height     : 100vh;
+      }
+    }
+    margin-top : auto;
+  }
+}
+
+// flexhelpers
+@if $flex-helpers == true {
+  @each $size, $size-em in $breakpoints {
+    @if $size == s{
+      // placeholder
+      %flex {display:flex; flex-wrap:wrap;}
+      // propiedades
+      .#{$size}-row{ @extend %flex; flex-direction: row;}
+      .#{$size}-row-reverse{ @extend %flex; flex-direction: row-reverse;}
+      .#{$size}-column{ @extend %flex; flex-direction: column;}
+      .#{$size}-column-reverse{ @extend %flex; flex-direction: column-reverse;}
+      .#{$size}-flex-center{ @extend %flex; justify-content: center; align-content: center; align-items: center; text-align: center;}
+      .#{$size}-main-start{ @extend %flex; justify-content: flex-start;}
+      .#{$size}-main-center{ @extend %flex; justify-content: center;}
+      .#{$size}-main-end{ @extend %flex; justify-content: flex-end;}
+      .#{$size}-main-space-between{ @extend %flex; justify-content: space-between;}
+      .#{$size}-main-space-around{ @extend %flex; justify-content: space-around;}
+      .#{$size}-cross-start{ @extend %flex; align-content: flex-start; align-items: flex-start;}
+      .#{$size}-cross-center{ @extend %flex; align-content: center; align-items: center;}
+      .#{$size}-cross-end{ @extend %flex; align-content: flex-end; align-items: flex-end;}
+      .#{$size}-cross-stretch{ @extend %flex; align-content: stretch; align-items: stretch;}
+      .#{$size}-cross-baseline{ @extend %flex; align-items:baseline;}
+      .#{$size}-cross-space-between{ @extend %flex; align-content: space-between;}
+      .#{$size}-cross-space-around{ @extend %flex; align-content: space-around;}
+      @for $i from -2 through 2{
+        .#{$size}-order-#{$i}{ order: #{$i} }
+      }
+    }
+    @else {
+      @media screen and(min-width: $size-em) {
+        // placeholder
+        %#{$size}-flex{ display:flex; flex-wrap: wrap;}
+        // propiedades
+        .#{$size}-row{ @extend %#{$size}-flex; flex-direction: row;}
+        .#{$size}-row-reverse{ @extend %#{$size}-flex; flex-direction: row-reverse;}
+        .#{$size}-column{ @extend %#{$size}-flex; flex-direction: column;}
+        .#{$size}-column-reverse{ @extend %#{$size}-flex; flex-direction: column-reverse;}
+        .#{$size}-flex-center{ @extend %#{$size}-flex; justify-content: center; align-content: center; align-items: center;}
+        .#{$size}-main-start{ @extend %#{$size}-flex; justify-content: flex-start;}
+        .#{$size}-main-center{ @extend %#{$size}-flex; justify-content: center;}
+        .#{$size}-main-end{ @extend %#{$size}-flex; justify-content: flex-end;}
+        .#{$size}-main-space-between{ @extend %#{$size}-flex; justify-content: space-between;}
+        .#{$size}-main-space-around{ @extend %#{$size}-flex; justify-content: space-around;}
+        .#{$size}-cross-start{ @extend %#{$size}-flex; align-content: flex-start; align-items: flex-start;}
+        .#{$size}-cross-center{ @extend %#{$size}-flex; align-content: center; align-items: center;}
+        .#{$size}-cross-end{ @extend %#{$size}-flex; align-content: flex-end; align-items: flex-end;}
+        .#{$size}-cross-stretch{ @extend %#{$size}-flex; align-content: stretch; align-items: stretch;}
+        .#{$size}-cross-baseline{ @extend %#{$size}-flex; align-items: baseline;}
+        .#{$size}-cross-space-between{ @extend %#{$size}-flex; align-content: space-between;}
+        .#{$size}-cross-space-around{ @extend %#{$size}-flex; align-content: space-around;}
+        @for $i from -2 through 2{
+          .#{$size}-order-#{$i}{ order: #{$i} }
+        }
+      }
+    }
+  }
+}

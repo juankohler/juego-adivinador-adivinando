@@ -1,0 +1,30 @@
+html{	box-sizing: border-box; }
+
+*, *::after, *::before { box-sizing: inherit; }
+
+body{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+// imagenes responsive
+img{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display:block;    
+}
+
+a {
+  text-decoration : none;
+}
+
+a:visited{
+    color:none;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    padding:0;
+    margin:0;
+}

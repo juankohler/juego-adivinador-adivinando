@@ -1,0 +1,27 @@
+@import "_jk-colors.scss"; // paleta de colores
+@import "_jk-funtions.scss"; // funciones
+
+// Breakpoints
+  $breakpoints : (
+  s : em(0px),
+  m : em(600px),
+  l : em(1020px),
+  // xl: em(1440px)
+  ) !default;
+
+// Ancho máximo para los contenedores
+  $max-width : 1400px !default;
+
+// Seperación horizontal entre items (*2)
+  $gutter : em(15px) !default;
+
+// JK-helpers
+  $helpers : true !default;      // .no-padding
+  $flex-helpers : true !default; // .-main- .-cross-
+  $visibility: true !default;    // .-hide
+  $sticky: false !default;       // .sticky-footer
+
+@import "_jk-base.scss";         // estilos base
+@import "_jk-core.scss";         // estilos core
+@import "_jk-helpers.scss";      // JK-helpers
+@import "_jk-visibility.scss";   // visibilidad

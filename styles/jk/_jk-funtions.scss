@@ -1,0 +1,38 @@
+// obtener color
+@function getColor($color, $type) {
+  @if map-has-key($colorss, $color) {
+    $curr_color: map-get($colorss, $color);
+    @if map-has-key($curr_color, $type) {
+      @return map-get($curr_color, $type);
+    }
+  }
+  @warn "Unknown `#{name}` in $colors.";
+  @return null;
+}
+// obtener valor de shadow
+@function getShadow($s){
+  @return map-get($shadow,$s);
+}
+
+// obtener medida de breakpoint;
+@function getBreakpoint($bp){
+  @return map-get($breakpoints,$bp);
+}
+
+// transformar px a em
+@function em($el) {
+  @if type_of($el) == number and unit($el) == 'px' {
+    @return ($el / 16px) * 1em;
+  } @else {
+    @error 'Function em() requires a px unit as argument';
+  }
+}
+
+// transformar px a rem
+@function rem($el) {
+  @if type_of($el) == number and unit($el) == 'px' {
+    @return ($el / 16px) * 1rem;
+  } @else {
+    @error 'Function rem() requires a px unit as argument';
+  }
+}
