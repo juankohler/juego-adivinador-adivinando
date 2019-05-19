@@ -11,13 +11,18 @@ window.jQuery = $;
   var intentos=0;
 
   let initGame1 = () => {
+    if(activeGame1==true){
+      alert("Se comenzo otro juego");
+    }
     activeGame1 = true;
+    activeGame2 = false;
     $(".instructions-container, .results-container").removeClass("hide");
     var opciones = ["1","2","3","4","5","6","7","8","9"];
     var pos;
-
+    
     //Vacio el arreglo
-    numero = []
+    numero = [];
+    intentos = 0;
     //Armo un arreglo con 4 numeros al azar, que no se repitan
     for(var i=0; i<4; i++){
       var cifra = opciones[Math.round(Math.random()*(opciones.length-1))];
@@ -49,11 +54,11 @@ window.jQuery = $;
       if(opcion.toString() == numero.toString()){
         if(intentos == 1){
           let htmlActual = $("#results-text").html();
-          $("#results-text").html(htmlActual + "GANASTE EN " + intentos + " INTENTO! <br>");
+          $("#results-text").html("GANASTE EN " + intentos + " INTENTO! <br>" + htmlActual);
           console.log("GANASTE");
         }else {          
         let htmlActual = $("#results-text").html();
-        $("#results-text").html(htmlActual + "GANASTE EN " + intentos + " INTENTOS! <br>");
+        $("#results-text").html( "GANASTE EN " + intentos + " INTENTOS! <br>" + htmlActual);
         console.log("GANASTE");
         }
         
@@ -69,7 +74,7 @@ window.jQuery = $;
         }
 
         let htmlActual = $("#results-text").html();
-        $("#results-text").html(htmlActual + "Bien:" + correctos + " , Regular: " + regular + "<br>");
+        $("#results-text").html( "Bien:" + correctos + " , Regular: " + regular + "<br>"+ htmlActual);
         
       }
 

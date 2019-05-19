@@ -8,8 +8,12 @@ body{
 
 .game{
     font-family: 'Roboto', sans-serif;
-    padding: 40px;
-    
+    padding: 10px;
+    @media screen and (min-width: getBreakpoint(m)) {
+        padding: 40px;
+
+    }
+
     .title{
         font-size: 26px;
         padding: 10px 10px 10px;
@@ -41,14 +45,19 @@ body{
             background-color: getColor(red,8);
             opacity: .8;
             border: 1px solid getColor(red,9);
-            padding: 15px;
             border-radius: 20px;
-            margin: 0 30px;
+            padding: 15px;
             font-weight: 700;
             font-size: 20px;
             color:getColor(white,0);
             box-shadow: getShadow(0);
             letter-spacing: .2px;
+            margin: 5px 5px;
+            width: 260px;
+            @media screen and (min-width: getBreakpoint(m)) {
+                margin: 0 30px;
+                width: auto;
+            }
             &:hover{
                 box-shadow: getShadow(2);
                 transition: .2s;
