@@ -12,7 +12,6 @@ window.jQuery = $;
 
   let initGame1 = () => {
     activeGame1 = true;
-    // console.log("inicializado juego 1")
     $(".instructions-container, .results-container").removeClass("hide");
     var opciones = ["1","2","3","4","5","6","7","8","9"];
     var pos;
@@ -27,16 +26,6 @@ window.jQuery = $;
       numero.push(cifra);
     }
     console.log(numero);
-
-    // let cifra2 = opciones[Math.round(Math.random()*7)];
-    // pos = opciones.indexOf(cifra2);
-    // opciones.splice(pos,1);
-    // let cifra3 = opciones[Math.round(Math.random()*6)];
-    // pos = opciones.indexOf(cifra3);
-    // opciones.splice(pos,1);
-    // let cifra4 = opciones[Math.round(Math.random()*5)];
-    // pos = opciones.indexOf(cifra4);
-    // opciones.splice(pos,1);
 
   }
 
