@@ -7,14 +7,31 @@ block metadescription
   meta(name="description" content="Juega a adivinar un número!")
 block css
   link(rel="stylesheet", href="../styles/index.scss")
+  link(href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet")
+
 
 //- blocks de <body>
 block content
   main
     section.game
-      .jk-container
-        h1.title Juego Adivinador | Eventbrite
-      
+      .jk-container.full.s-flex-center
+        .s-100
+          h1.title Juego Adivinador
+        .s-100
+          p.text ¿Qué juego te gustaria jugar?
+        .buttons.s-100.s-main-center
+          .button Advina mi número
+          .button Te adivinare el número
+        .s-100.instructions-container
+          p.instructions Ya pensé un número de 4 , adivina cual es:
+          .input-container.s-100
+            //- span ingresa un numero:
+            input(type="number") 
+        .results.s-100.s-flex-center
+          .s-100
+            span RESULTADOS
+          .results-text.s-100
+            
 
 
   //- script
