@@ -1,0 +1,18 @@
+extends ../templates/main.pug
+
+//- blocks de <head>
+block title
+  | Adivinador | Eventbrite 
+block metadescription
+  meta(name="description" content="Juega a adivinar un número!")
+block css
+  link(rel="stylesheet", href="../styles/index.scss")
+
+//- blocks de <body>
+block content
+  main
+    section
+      h1 Adivinador | Eventbrite
+
+  //- script
+  script(src="../js/index.js")
