@@ -61,6 +61,7 @@ body{
     .instructions-container{
         background-color: getColor(grey,4);
         max-width: 600px;
+        // man-width: 600px;
         margin: 30px 5px 15px;
         border-radius: 15px;
         padding: 15px;
@@ -94,7 +95,18 @@ body{
         }
     }
 
-    .results{
+    .send{
+        width: 140px;
+        margin-top: 15px;
+        font-size: 18px;
+        background-color: getColor(grey,8);
+        color:getColor(grey,1);
+        font-weight: 700;
+        padding:10px;
+    }
+
+
+    .results-container{
         padding: 15px;
         span{
             max-width: 600px;
@@ -104,7 +116,7 @@ body{
         }
     }
     .results-text{
-        min-height: 200px;
+        height: 200px;
         overflow-y: scroll;
         text-align: start;
         border: 2px solid getColor(red,4);
