@@ -8,8 +8,8 @@ window.jQuery = $;
   //Variables
   var activeGame1 = false;
   var activeGame2 = false;
-  var numero= [];
-  var intentos=0;
+  var numeroGame1= [];
+  var intentosGame1=0;
 
 
   ///////////////
@@ -35,17 +35,17 @@ window.jQuery = $;
     var pos;
     
     //Vacio el arreglo por si inicia un nuevo juego y reinicio los intentos
-    numero = [];
-    intentos = 0;
+    numeroGame1 = [];
+    intentosGame1 = 0;
 
     //Armo un arreglo con 4 numeros al azar, que no se repitan
     for(var i=0; i<4; i++){
       var cifra = opciones[Math.round(Math.random()*(opciones.length-1))];
       pos = opciones.indexOf(cifra);
       opciones.splice(pos,1);
-      numero.push(cifra);
+      numeroGame1.push(cifra);
     }
-    console.log(numero);
+    console.log(numeroGame1);
 
   }
 
@@ -58,7 +58,7 @@ window.jQuery = $;
     let regulares = 0;
 
     //subo variable intentos
-    intentos++;
+    intentosGame1++;
 
     //verifico que el valor ingresado sea de 4 cifras y mayor a igual 0
     if(valor.length == 4 & valor >= 0){
@@ -69,24 +69,23 @@ window.jQuery = $;
       }
 
       //Comparo la opcion ingresada con el numero
-      console.log(opcion + "<br>" + numero)
-      if(opcion.toString() == numero.toString()){
-        if(intentos == 1){
+      if(opcion.toString() == numeroGame1.toString()){
+        if(intentosGame1 == 1){
           let htmlActual = $("#results-text").html();
-          $("#results-text").html("GANASTE EN " + intentos + " INTENTO! <br>" + htmlActual);
+          $("#results-text").html("<strong> GANASTE EN " + intentosGame1 + " INTENTO! EL NUMERO ERA: " + numeroGame1[0].toString() + numeroGame1[1].toString() + numeroGame1[2].toString() + numeroGame1[3].toString()  +  "<br></strong>" + htmlActual);
           console.log("GANASTE");
         }else {          
         let htmlActual = $("#results-text").html();
-        $("#results-text").html( "GANASTE EN " + intentos + " INTENTOS! <br>" + htmlActual);
+        $("#results-text").html( "<strong> GANASTE EN " + intentosGame1 + " INTENTOS! EL NUMERO ERA: " + numeroGame1[0].toString() + numeroGame1[1].toString() + numeroGame1[2].toString() + numeroGame1[3].toString() + "<br></strong>" + htmlActual);
         console.log("GANASTE");
         }
         
       } else {
         for(var j=0; j<4; j++){
           //compruebo si los numeros guardados en el arreglo de la opcion ingresada, estan en el arreglo del numero pensado
-          if(numero.indexOf(opcion[j]) != -1 ){
+          if(numeroGame1.indexOf(opcion[j]) != -1 ){
             //en caso de que el numero este y ocupe la misma posicion del otro arreglo aumento la variable correctos
-            if(numero[j] == opcion[j]){
+            if(numeroGame1[j] == opcion[j]){
               correctos++;
             }
             //en caso de que el numero este y ocupe una posicion distinta aumento la variable regulares
@@ -108,6 +107,11 @@ window.jQuery = $;
     }
 
   }
+
+
+  ///////////////
+  //EJERCICIO 2//
+  ///////////////
 
 
   
