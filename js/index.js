@@ -24,7 +24,7 @@ window.jQuery = $;
     if(activeGame1==true){
       alert("Se comenzo otro juego");
       let htmlActual = $("#results-text").html();
-      $("#results-text").html(" SE COMENZO OTRO JUEGO <br>" + htmlActual);
+      $("#results-text").html(" SE COMENZO OTRO JUEGO <br> ---------- <br>" + htmlActual);
     }
     
     activeGame1 = true;
@@ -45,6 +45,8 @@ window.jQuery = $;
       opciones.splice(pos,1);
       numeroGame1.push(cifra);
     }
+
+    //muestro el numero elegido en consola para probar
     console.log(numeroGame1);
 
   }
@@ -72,11 +74,11 @@ window.jQuery = $;
       if(opcion.toString() == numeroGame1.toString()){
         if(intentosGame1 == 1){
           let htmlActual = $("#results-text").html();
-          $("#results-text").html("<strong> GANASTE EN " + intentosGame1 + " INTENTO! EL NUMERO ERA: " + numeroGame1[0].toString() + numeroGame1[1].toString() + numeroGame1[2].toString() + numeroGame1[3].toString()  +  "<br></strong>" + htmlActual);
+          $("#results-text").html("<strong> GANASTE EN " + intentosGame1 + " INTENTO! <br> EL NUMERO ERA: " + numeroGame1[0].toString() + numeroGame1[1].toString() + numeroGame1[2].toString() + numeroGame1[3].toString()  +  "<br> ---------- <br></strong>" + htmlActual);
           console.log("GANASTE");
         }else {          
         let htmlActual = $("#results-text").html();
-        $("#results-text").html( "<strong> GANASTE EN " + intentosGame1 + " INTENTOS! EL NUMERO ERA: " + numeroGame1[0].toString() + numeroGame1[1].toString() + numeroGame1[2].toString() + numeroGame1[3].toString() + "<br></strong>" + htmlActual);
+        $("#results-text").html( "<strong> GANASTE EN " + intentosGame1 + " INTENTOS! <br> EL NUMERO ERA: " + numeroGame1[0].toString() + numeroGame1[1].toString() + numeroGame1[2].toString() + numeroGame1[3].toString() + "<br> ---------- <br></strong>" + htmlActual);
         console.log("GANASTE");
         }
         
@@ -97,7 +99,7 @@ window.jQuery = $;
 
         //muestro en el cuadro resultados
         let htmlActual = $("#results-text").html();
-        $("#results-text").html( "Bien:" + correctos + " , Regular: " + regulares + "<br>"+ htmlActual);
+        $("#results-text").html( "Numero ingresado:" + valor + "<br>" + correctos +" BIEN Y " + regulares + " REGULAR <br> ---------- <br>" + htmlActual);
         
       }
 
