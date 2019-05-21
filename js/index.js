@@ -18,18 +18,19 @@ window.jQuery = $;
   
   //funcion para iniciar el juego 1 (la persona adivina el número)
   let initGame1 = () => {
+    //se muestra html oculto correspondiente al primer juego
+    $(".instructions-container, .results-container").removeClass("hide");
+
     if(activeGame1==true){
       alert("Se comenzo otro juego");
       let htmlActual = $("#results-text").html();
       $("#results-text").html(" SE COMENZO OTRO JUEGO <br>" + htmlActual);
     }
-    //se muestra html oculto correspondiente al primer juego
-    $(".instructions-container, .results-container").removeClass("hide");
     
     activeGame1 = true;
     activeGame2 = false;
 
-    //numeros que con los que se puede armar el numero a advinar
+    //Numeros que con los que se puede armar el numero a advinar
     var opciones = ["1","2","3","4","5","6","7","8","9","0"];
     var pos;
     
@@ -54,18 +55,21 @@ window.jQuery = $;
     //Declaro un arreglo para la opcion ingresada
     let opcion = []
     let correctos = 0;
-    let regular = 0;
+    let regulares = 0;
 
     //subo variable intentos
     intentos++;
 
-    if(valor.length == 4 & valor.length >= 0){
+    //verifico que el valor ingresado sea de 4 cifras y mayor a igual 0
+    if(valor.length == 4 & valor >= 0){
 
-      //Lleno el arreglo con la opcion ingresada
+      //Lleno el arreglo con la opcion ingresada.
       for(var j=0; j<4; j++){
         opcion.push(valor.charAt(j));
       }
-      //Compara la opcion ingresada con el numero
+
+      //Comparo la opcion ingresada con el numero
+      console.log(opcion + "<br>" + numero)
       if(opcion.toString() == numero.toString()){
         if(intentos == 1){
           let htmlActual = $("#results-text").html();
@@ -79,27 +83,35 @@ window.jQuery = $;
         
       } else {
         for(var j=0; j<4; j++){
+          //compruebo si los numeros guardados en el arreglo de la opcion ingresada, estan en el arreglo del numero pensado
           if(numero.indexOf(opcion[j]) != -1 ){
+            //en caso de que el numero este y ocupe la misma posicion del otro arreglo aumento la variable correctos
             if(numero[j] == opcion[j]){
               correctos++;
-            }else {
-              regular++;
+            }
+            //en caso de que el numero este y ocupe una posicion distinta aumento la variable regulares
+            else {
+              regulares++;
             }
           }
         }
 
+        //muestro en el cuadro resultados
         let htmlActual = $("#results-text").html();
-        $("#results-text").html( "Bien:" + correctos + " , Regular: " + regular + "<br>"+ htmlActual);
+        $("#results-text").html( "Bien:" + correctos + " , Regular: " + regulares + "<br>"+ htmlActual);
         
       }
 
+      
     }else {
       alert("Por favor ingresa un numero positivo de 4 cifras");
     }
 
   }
 
+
   
+  //Llamado a funciones
   $("#adivinador").click(initGame1);
   $("#send").click(checkNumber);
 })();
