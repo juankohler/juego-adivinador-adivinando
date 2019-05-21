@@ -5,24 +5,38 @@ window.jQuery = $;
 
 (() => {
   
+  //Variables
   var activeGame1 = false;
   var activeGame2 = false;
   var numero= [];
   var intentos=0;
 
+
+  ///////////////
+  //EJERCICIO 1//
+  ///////////////
+  
+  //funcion para iniciar el juego 1 (la persona adivina el número)
   let initGame1 = () => {
     if(activeGame1==true){
       alert("Se comenzo otro juego");
+      let htmlActual = $("#results-text").html();
+      $("#results-text").html(" SE COMENZO OTRO JUEGO <br>" + htmlActual);
     }
+    //se muestra html oculto correspondiente al primer juego
+    $(".instructions-container, .results-container").removeClass("hide");
+    
     activeGame1 = true;
     activeGame2 = false;
-    $(".instructions-container, .results-container").removeClass("hide");
-    var opciones = ["1","2","3","4","5","6","7","8","9"];
+
+    //numeros que con los que se puede armar el numero a advinar
+    var opciones = ["1","2","3","4","5","6","7","8","9","0"];
     var pos;
     
-    //Vacio el arreglo
+    //Vacio el arreglo por si inicia un nuevo juego y reinicio los intentos
     numero = [];
     intentos = 0;
+
     //Armo un arreglo con 4 numeros al azar, que no se repitan
     for(var i=0; i<4; i++){
       var cifra = opciones[Math.round(Math.random()*(opciones.length-1))];
@@ -34,6 +48,7 @@ window.jQuery = $;
 
   }
 
+  //funcion para chequear los numeros que se ingresan
   let checkNumber = () =>{
     let valor = $("#value").val().toString();
     //Declaro un arreglo para la opcion ingresada
