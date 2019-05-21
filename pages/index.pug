@@ -21,21 +21,38 @@ block content
           p.text ¿Qué juego te gustaria jugar?
         .buttons.s-100.s-main-center
           .button#adivinador Advina mi número
-          .button Te adivinare el número
-        .s-100.instructions-container.hide
-          p.instructions Ya pensé un número positivo de 4 cifras distintas, cada cifra puede ser de 0 a 9, adivina cual es: 
-          .input-container.s-100
-            //- span ingresa un numero:
-            input#value(type="number") 
+          .button#pensador Te adivinare el número
+        .game-adivinador.s-main-center.hide
+          .s-100.instructions-container
+            p.instructions Ya pensé un número positivo de 4 cifras distintas, cada cifra puede ser de 0 a 9, adivina cual es: 
+            .input-container.s-100
+              input#value-adivinador(type="number" min="0" max="9999") 
+              .s-100
+                input.send#send-adivinador(type="submit")
+          .results-container.s-100.s-flex-center
             .s-100
-              input.send#send(type="submit" min="0")
-        .results-container.s-100.s-flex-center.hide
-          .s-100
-            span <u><strong>RESULTADOS</strong></u> <br>
-            span Cifras en lugar correcto: BIEN <br>
-            span Cifras en lugar incorrecto: REGULAR <br>
-          .results-text.s-100#results-text
-            
+              span <u><strong>RESULTADOS</strong></u> <br>
+              span Cifras en lugar correcto: BIEN <br>
+              span Cifras en lugar incorrecto: REGULAR <br>
+            .results-text.s-100#results-text-adivinador
+        .game-pensador.s-main-center.hide
+          .s-100.instructions-container
+            p.instructions Pensaste un número positivo de 4 cifras distintas? cada cifra puede ser de 0 a 9, adivinare cual es: 
+            p.answer Tu numero es <span id="answer-pensador">1234</span> ?
+            .input-container.s-100
+              label.label(for="bien") BIEN:
+              input#bien-pensador(type="number" name="bien" min="0" max="4") 
+              label.label(for="regular") REGULAR: 
+              input#regular-pensador(type="number" name="regular" min="0" max="4") 
+              .s-100
+                input.send#send-pensador(type="submit" min="0")
+          .results-container.s-100.s-flex-center
+            .s-100
+              span <u><strong>RESULTADOS</strong></u> <br>
+              span Cifras en lugar correcto: BIEN <br>
+              span Cifras en lugar incorrecto: REGULAR <br>
+            .results-text.s-100#results-text-pensador
+              
 
 
   //- script
