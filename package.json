@@ -9,7 +9,7 @@
     "start": "parcel ./pages/index.pug --no-cache",
     "pre-build": "rmdir /q /s build",
     "build": "parcel build ./pages/index.pug -d ./build --no-cache --no-source-maps",
-    "deploy": "surge -p ./build -d "
+    "deploy": "surge -p ./build -d adivinador.surge.sh "
   },
   "keywords": [],
   "author": "",
