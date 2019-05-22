@@ -18,6 +18,7 @@ window.jQuery = $;
   //Arreglo para posibles numeros(1000 a 9999)
   var opcionesGame2 = [];
   var numeroCandidatoActual;
+  var candidatoEncontrado;
 
   ///////////////
   //EJERCICIO 1//
@@ -196,25 +197,28 @@ window.jQuery = $;
         }
       }
       else{
-        //Guardo la respuesta en arreglo
+
+        // Guardo la respuesta en arreglo
         numerosCandidatosGame2.push({numero:respuestaNumero, bien:respuestaBien, regular:respuestaRegular});
 
-        //Quito el numero del arreglo de opciones 
+        // Quito el numero del arreglo de opciones
         let pos = opcionesGame2.indexOf(parseInt(respuestaNumero));
         if(pos != -1){
           opcionesGame2.splice(pos,1);
         }
+        candidatoEncontrado = false;
 
-        
-        // Busco otro numero del arreglo
-        let nuevoCandidato = opcionesGame2[Math.round(Math.random()*(opcionesGame2.length-1))].toString();
-        
-        // Compruebo que el candidato encontrado verifica los anteriores
-        compararCandidatos(nuevoCandidato);
+        while(candidatoEncontrado == false){
+          // Busco otro numero del arreglo
+          let nuevoCandidato = opcionesGame2[Math.round(Math.random()*(opcionesGame2.length-1))].toString();
+          
+          // Compruebo que el candidato encontrado verifica los anteriores
+          compararCandidatos(nuevoCandidato);
+        }
       
         //Pregunto con nuevo candidato
         let htmlActual = $("#results-text-pensador").html();
-        $("#results-text-pensador").html("Posible candidato: " + numeroCandidatoActual + "<br>" + htmlActual);
+        $("#results-text-pensador").html("Posible candidato: " + numeroCandidatoActual + "<br>" + "----------<br>"+  "Bien: " + roundRespuestaBien + ", Regular: " + roundRespuestaRegular + "<br>" + htmlActual);
         $("#answer-pensador").html(numeroCandidatoActual);
         console.log("candidato: " + numeroCandidatoActual);
           
@@ -243,9 +247,9 @@ window.jQuery = $;
       for(let x=0;x<4;x++){
         candidatoActualAux.push(candidatoNuevo.charAt(x))
       }
-      // console.log("posible candidato nuevo:" + candidatoNuevo );
-      // console.log(candidatoAnteriorAux);
-      // console.log(candidatoActualAux);
+      console.log("posible candidato nuevo:" + candidatoNuevo );
+      console.log(candidatoAnteriorAux);
+      console.log(candidatoActualAux);
 
       //comparo el candidato nuevo con candidato anterior
       for(let v=0;v<4;v++){
@@ -270,12 +274,22 @@ window.jQuery = $;
         if(pos != -1){
           opcionesGame2.splice(pos,1);
         }
-        //Busco otro y ejecuto la funcion denuevo
-        let nuevoCandidato = opcionesGame2[Math.round(Math.random()*(opcionesGame2.length-1))].toString();
-        setTimeout(compararCandidatos(nuevoCandidato), 1);
-      }else{
 
+        // Busco otro y ejecuto la funcion de nuevo (al hacer el paso recursivo aca se llenaba la pila del navegador, y se colgaba) 
+        // let nuevoCandidato = opcionesGame2[Math.round(Math.random()*(opcionesGame2.length-1))].toString();
+        // compararCandidatos(nuevoCandidato);
+
+
+        // Decidí hacerlo con un variable booleana para solucionar el problema
+        candidatoEncontrado = false;
+        console.log("candidato encontrado:" + candidatoEncontrado);
+        break;
+
+      }else{
         numeroCandidatoActual = candidatoNuevo;
+        candidatoEncontrado = true;
+        console.log("candidato encontrado:" + candidatoEncontrado);
+
       }
     }
   }

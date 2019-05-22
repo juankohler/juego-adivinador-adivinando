@@ -113,12 +113,20 @@ body{
         @media screen and (min-width: getBreakpoint(m)) {
             padding: 15px;
         }
+        #value-adivinador{
+            min-width: 200px;
+        }
         input{
             border: 1px solid getColor(grey,5);
             padding: 3px;
             position: relative;
             top:-1px;
             font-size: 18px;
+            min-width: 55px;
+            @media screen and (min-width: 340px) {
+                min-width: 70px;
+
+            }
         }
     }
 
