@@ -46,7 +46,7 @@ window.jQuery = $;
     numeroGame1 = [];
     intentosGame1 = 0;
 
-    //Armo un arreglo con 4 numeros al azar, que no se repitan
+    //Armo un arreglo con 4 numeros al azar, que no se repitan 
     for(let i=0; i<4; i++){
       var cifra = opciones[Math.round(Math.random()*(opciones.length-1))];
       pos = opciones.indexOf(cifra);
@@ -56,8 +56,6 @@ window.jQuery = $;
       opciones.splice(pos,1);
       numeroGame1.push(cifra);
     }
-
-    //muestro el numero elegido en consola para probar
     console.log("JUEGO 1: " + numeroGame1[0].toString() + numeroGame1[1].toString() + numeroGame1[2].toString() + numeroGame1[3].toString() );
 
   }
@@ -65,8 +63,7 @@ window.jQuery = $;
   //funcion para chequear los numeros que se ingresan
   const checkGame1 = () =>{
     let valor = $("#value-adivinador").val().toString();
-    //Declaro un arreglo para la opcion ingresada
-    let opcion = []
+    let opcionIngresada = []
     let correctos = 0;
     let regulares = 0;
 
@@ -78,11 +75,11 @@ window.jQuery = $;
 
       //Lleno el arreglo con la opcion ingresada.
       for(let j=0; j<4; j++){
-        opcion.push(valor.charAt(j));
+        opcionIngresada.push(valor.charAt(j));
       }
 
       //Comparo la opcion ingresada con el numero
-      if(opcion.toString() == numeroGame1.toString()){
+      if(opcionIngresada.toString() == numeroGame1.toString()){
         if(intentosGame1 == 1){
           let htmlActual = $("#results-text-adivinador").html();
           $("#results-text-adivinador").html("<strong> GANASTE EN " + intentosGame1 + " INTENTO! <br> EL NUMERO ERA: " + numeroGame1[0].toString() + numeroGame1[1].toString() + numeroGame1[2].toString() + numeroGame1[3].toString()  +  "<br> ---------- <br></strong>" + htmlActual);
@@ -96,9 +93,9 @@ window.jQuery = $;
       } else {
         for(let j=0; j<4; j++){
           //compruebo si los numeros guardados en el arreglo de la opcion ingresada, estan en el arreglo del numero pensado
-          if(numeroGame1.indexOf(opcion[j]) != -1 ){
+          if(numeroGame1.indexOf(opcionIngresada[j]) != -1 ){
             //en caso de que el numero este y ocupe la misma posicion del otro arreglo aumento la variable correctos
-            if(numeroGame1[j] == opcion[j]){
+            if(numeroGame1[j] == opcionIngresada[j]){
               correctos++;
             }
             //en caso de que el numero este y ocupe una posicion distinta aumento la variable regulares
@@ -143,7 +140,7 @@ window.jQuery = $;
     numerosCandidatosGame2 = [];
     intentosGame2=0;
     
-    //Lleno el arreglo con todos los numeros posibles(1000 a 9999)
+    //Lleno el arreglo con todos los numeros posibles de 4 cifras que no se repitan 
     for(let i=1000; i<10000; i++){
       let digito1 = i.toString().charAt(0)
       let digito2 = i.toString().charAt(1)
@@ -210,10 +207,19 @@ window.jQuery = $;
 
         while(candidatoEncontrado == false){
           // Busco otro numero del arreglo
-          let nuevoCandidato = opcionesGame2[Math.round(Math.random()*(opcionesGame2.length-1))].toString();
-          
-          // Compruebo que el candidato encontrado verifica los anteriores
-          compararCandidatos(nuevoCandidato);
+
+          //En caso de error humano, el arreglo se vacia y muestro este mensaje
+          if (opcionesGame2.length == 0){
+            let htmlActual = $("#results-text-pensador").html();
+            $("#results-text-pensador").html("No pude encontrar tu numero, por favor toca el boton de 'Te adivinare tu numero' nuevamente para iniciar otro juego! " + "<br>" + "----------<br>" + htmlActual);
+            return false;
+          }else {
+            let nuevoCandidato = opcionesGame2[Math.round(Math.random()*(opcionesGame2.length-1))].toString();
+            // Compruebo que el candidato encontrado verifica los anteriores
+            compararCandidatos(nuevoCandidato);
+
+          }
+        
         }
       
         //Pregunto con nuevo candidato
@@ -275,7 +281,7 @@ window.jQuery = $;
           opcionesGame2.splice(pos,1);
         }
 
-        // Busco otro y ejecuto la funcion de nuevo (al hacer el paso recursivo aca se llenaba la pila del navegador, y se colgaba) 
+        // Busco otro y ejecuto la funcion de nuevo (al hacer el paso recursivo aca se llenaba la pila del navegador, y se colgaba asi que opte por otro opcion) 
         // let nuevoCandidato = opcionesGame2[Math.round(Math.random()*(opcionesGame2.length-1))].toString();
         // compararCandidatos(nuevoCandidato);
 
