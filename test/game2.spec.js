@@ -21,7 +21,7 @@ describe('JUEGO 2: "Adivinaré mi número"', ()=> {
   })
 
   describe('metodo validarCandidato', ()=> {
-    it('Verifica que el candidatoNuevo si cumple con las validaciones (Bien, Regular)',()=>{
+    it('Verifica que el candidato nuevo SI cumple con las validaciones (Bien:2, Regular:2, CandidatoAnterior:1234, CandidatoNuevo: 1243)',()=>{
       Game2.initGame2();
       let candidatoInicial = 1234
       let candidatoNuevo = 1243
@@ -31,6 +31,17 @@ describe('JUEGO 2: "Adivinaré mi número"', ()=> {
       Game2.validarCandidato(candidatoNuevo,Game2.numerosCandidatosGame2)
       let candidatoFinal = Game2.numeroCandidatoActual
       expect(candidatoNuevo).toEqual(candidatoFinal);
+    })
+    it('Verifica que el candidato nuevo NO cumple con las validaciones (Bien:2, Regular:2, CandidatoAnterior:1234, CandidatoNuevo: 1235)',()=>{
+      Game2.initGame2();
+      let candidatoInicial = 1234
+      let candidatoNuevo = 1235
+      let bien = 2;
+      let regular = 2;
+      Game2.agregarACandidatosAnteriores(bien,regular,candidatoInicial);
+      Game2.validarCandidato(candidatoNuevo,Game2.numerosCandidatosGame2)
+      let candidatoFinal = Game2.numeroCandidatoActual
+      expect(candidatoNuevo).not.toEqual(candidatoFinal);
     })
   })
 })
