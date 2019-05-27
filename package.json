@@ -1,24 +1,29 @@
 {
-  "name": "abeto",
+  "name": "adivinador-pensador",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "pre-start": "rmdir /q /s dist",
     "start": "parcel ./pages/index.pug --no-cache",
     "pre-build": "rmdir /q /s build",
     "build": "parcel build ./pages/index.pug -d ./build --no-cache --no-source-maps",
-    "deploy": "surge -p ./build -d adivinador.surge.sh "
+    "deploy": "surge -p ./build -d adivinador.surge.sh ",
+    "test": "parcel ./test/test.html"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
     "autoprefixer": "^9.1.5",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "cssnano": "^4.1.0",
+    "jasmine": "^3.4.0",
+    "jasmine-core": "^3.4.0",
     "jquery": "^3.3.1",
     "node-sass": "^4.9.3",
     "parcel-bundler": "latest",
