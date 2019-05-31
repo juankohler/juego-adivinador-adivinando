@@ -20,7 +20,7 @@ var opcionesGame2 = [];
 var numeroCandidatoActual;
 var candidatoEncontrado;
 
-//FUNCIÓN para iniciar el juego 1 (la persona adivina el número)
+//FUNCIÓN para iniciar el juego 2 (la maquina adivina el número)
 const initGame2 = () => {
   //Vacio los arreglo por si inicia un nuevo juego y reinicio los intentos
   opcionesGame2 = []
