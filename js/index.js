@@ -3,7 +3,7 @@ import * as Game1 from '../js/game1'
 import * as Game2 from '../js/game2';
 
   //Elementos del DOM
-    //JUEGO 1
+    //JUEGO 1 
     let gameAdivinador = $(".game-adivinador");
     let resultTextAdivinador = $("#results-text-adivinador");  
     //JUEGO 2
